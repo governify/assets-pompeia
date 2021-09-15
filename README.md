@@ -1,2 +1,2 @@
 # assets-bluejay
-Assets for Bluejay Infrastructure
+Assets for Bluejay Project
