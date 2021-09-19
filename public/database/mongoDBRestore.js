@@ -11,7 +11,7 @@ const path = require('path');
 const DIR = `./tmp`;
 
 async function getFile(config){
-    const url = '$_[infrastructure.external.assets.default]';
+    const url = '$_[infrastructure.internal.assets.default]';
     const path = '/api/v1/public/database/backups/'+config.nameDB+'/'+config.backup;
 
     const writer = fs.createWriteStream(DIR+"/"+config.backup);
