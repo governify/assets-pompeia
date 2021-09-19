@@ -156,7 +156,7 @@ $scope.submitFile = () =>{
     var config = { headers: { 'Content-Type': undefined },
                 transformResponse: angular.identity
                 };
-    var url = '$_[infrastructure.internal.assets.default]/api/v1/public/database/backups/' + $scope.dbSelected + "/";
+    var url = '$_[infrastructure.external.assets.default]/api/v1/public/database/backups/' + $scope.dbSelected + "/";
 
     $http.post(url,fd,config).then(()=>{
         $scope.openAlert('backupAlert','Archivo subido correctamente','alert-primary');
