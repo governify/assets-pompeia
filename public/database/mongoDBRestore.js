@@ -67,6 +67,9 @@ module.exports.main = async function(config) {
 
     if (!fs.existsSync(DIR)){
         fs.mkdirSync(DIR);
+    }else {
+        fs.rmdirSync(DIR, { recursive: true });
+        fs.mkdirSync(DIR);
     }
 
     await getFile(config);
