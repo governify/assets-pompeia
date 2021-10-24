@@ -21,15 +21,19 @@ $scope.loadDatabases = async () => {
 
         for(let value of Object.entries(temp)){
             try{
-                let dbType = value[1].startsWith('mongodb')? 'Mongo':'Influx'
-                
+                let dbTypeTemp = value[0].split('-')[0]
+                let dbType = dbTypeTemp.charAt(0).toUpperCase() + dbTypeTemp.slice(1); 
+                if(dbType !== 'Mongo' && dbType !== 'Influx') continue;
                 let url = '$_[infrastructure.external.assets.default]/api/v1/info/public/database/backups/'+value[0];
-                let records = (await $http.get(url).catch(()=>{
-                        return;
-                    })).data.files.sort((a,b)=>{
+                let records = []
+                await $http.get(url).then(data => {
+                    records = data.data.files.sort((a,b)=>{
                         let res = new Date(a.lastModified) < new Date(b.lastModified)
                         return res?1:-1
                     })
+                }).catch(()=>{
+                    return;
+                })
                 $scope.databases.push({
                     dbName: value[0],
                     dbUrl: value[1],
