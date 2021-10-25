@@ -1,0 +1,7 @@
+public/database/backups/*
+public/renders/tpa/*
+!public/renders/tpa/template.json
+!public/renders/tpa/default.html
+!public/renders/tpa/default.js
+!public/renders/tpa/tpa.css
+public/logs
