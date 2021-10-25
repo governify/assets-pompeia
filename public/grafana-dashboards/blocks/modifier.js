@@ -934,7 +934,7 @@ const atoms = {
     },
     "scatter": {
         "title": "Correlation for all teams",
-        "type": "isagroup-scatterplot",
+        "type": "governify-scatterplot",
         "guarantee": "###GUARANTEE.NAME###",
         "datasource": "InfluxDB",
         "description": "",
