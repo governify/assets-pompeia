@@ -4,4 +4,8 @@ public/renders/tpa/*
 !public/renders/tpa/default.html
 !public/renders/tpa/default.js
 !public/renders/tpa/tpa.css
+public/director/*
+!public/director/template.json
+!public/director/template.js
+!public/director/check-status.js
 public/logs
