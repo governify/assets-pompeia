@@ -1,2 +1,2 @@
-# assets-bluejay
-Assets for Bluejay Project
+# assets-pompeia
+Assets for Pompeia Project

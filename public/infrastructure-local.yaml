@@ -23,8 +23,8 @@ internal:
     default: 'grafana'
     grafana: 'http://host.docker.internal:5600'
   scopes:
-    default: 'bluejay'
-    bluejay: 'http://host.docker.internal:5700'
+    default: 'pompeia'
+    pompeia: 'http://host.docker.internal:5700'
   director:
     default: 'standard'
     standard: 'http://host.docker.internal:5800'
@@ -58,8 +58,8 @@ external:
     default: 'grafana'
     grafana: 'http://localhost:5600'
   scopes:
-    default: 'bluejay'
-    bluejay: 'http://localhost:5700'
+    default: 'pompeia'
+    pompeia: 'http://localhost:5700'
   director:
     default: 'standard'
     standard: 'http://localhost:5800'

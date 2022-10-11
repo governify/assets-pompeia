@@ -5,7 +5,7 @@ module.exports.main = async (config) => {
   let initDate = new Date(config.initialDate);
   let finalDate = new Date(config.finalDate);
 
-  config.notificationConfig = await axios.get('https://assets.bluejay.governify.io/api/v1/public/director/notification-config.json').then((res) => res.data).catch(() => undefined)
+  config.notificationConfig = await axios.get('https://assets.pompeia.governify.io/api/v1/public/director/notification-config.json').then((res) => res.data).catch(() => undefined)
 
   if (!config.notificationConfig) {
     console.log("Notification config not found")
@@ -46,7 +46,7 @@ return '';
 }
 
 async function getHooksUrls(config) {
-  const requestURL = 'http://scopes.bluejay.governify.io/api/v1/scopes/development/' + config.classId + '/' + config.projectId;
+  const requestURL = 'http://scopes.pompeia.governify.io/api/v1/scopes/development/' + config.classId + '/' + config.projectId;
   let notifications = []
   await axios.get(requestURL).then((response) => {
     notifications = response.data.scope.notifications
@@ -59,14 +59,14 @@ async function getHooksUrls(config) {
 }
 
 async function getStates(config) {
-  let requestURL = 'https://registry.bluejay.governify.io/api/v6/agreements/tpa-' + config.projectId;
+  let requestURL = 'https://registry.pompeia.governify.io/api/v6/agreements/tpa-' + config.projectId;
   let result = {}
 
   await axios.get(requestURL).then(async (response) => {
     const guarantees = response.data.terms.guarantees.map(guarantee => { return { id: guarantee.id, desc: guarantee.description, valueFunc: guarantee.of[0].objective.split(' >=')[0] } })
     for (let guarantee of guarantees) {
       result[guarantee.id] = { desc: guarantee.desc, valueFunc: guarantee.valueFunc };
-      requestURL = 'https://registry.bluejay.governify.io/api/v6/states/tpa-' + config.projectId + '/guarantees/'
+      requestURL = 'https://registry.pompeia.governify.io/api/v6/states/tpa-' + config.projectId + '/guarantees/'
         + guarantee.id + '?' + new URLSearchParams({ lasts: (config.days + config.historieMax)*2,evidences:'false',withNoEvidences:'false'});
       console.log(requestURL)
       await axios.get(requestURL).then((response) => {

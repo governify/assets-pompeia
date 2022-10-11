@@ -1,58 +1,58 @@
 internal:
   render:
     default: 'angular'
-    angular: 'http://bluejay-render'
+    angular: 'http://pompeia-render'
   assets:
     default: 'theia'
-    theia: 'http://bluejay-assets-manager'
+    theia: 'http://pompeia-assets-manager'
   reporter:
     default: 'grafana'
-    grafana: 'http://bluejay-reporter'
+    grafana: 'http://pompeia-reporter'
   registry:
     default: 'standard'
-    standard: 'http://bluejay-registry'
+    standard: 'http://pompeia-registry'
   collector:
     default: 'events'
-    events: 'http://bluejay-collector-events'
+    events: 'http://pompeia-collector-events'
   dashboard:
     default: 'grafana'
-    grafana: 'http://bluejay-dashboard:3000'
+    grafana: 'http://pompeia-dashboard:3000'
   director:
     default: 'standard'
-    standard: 'http://bluejay-director'
+    standard: 'http://pompeia-director'
   scopes:
-    default: 'bluejay'
-    bluejay: 'http://bluejay-scope-manager'
+    default: 'pompeia'
+    pompeia: 'http://pompeia-scope-manager'
   database:
     default: 'mongo-registry'
-    mongo-registry: 'mongodb://bluejay-mongo-registry:27017'
-    influx-reporter: 'http://bluejay-influx-reporter:8086'
-    redis-ec: 'redis://bluejay-redis-ec:6379'
+    mongo-registry: 'mongodb://pompeia-mongo-registry:27017'
+    influx-reporter: 'http://pompeia-influx-reporter:8086'
+    redis-ec: 'redis://pompeia-redis-ec:6379'
 external:
   render: 
     default: 'angular'
-    angular: 'https://ui{{dns.bluejay}}'
+    angular: 'https://ui{{dns.pompeia}}'
   assets:
     default: 'theia'
-    theia: 'https://assets{{dns.bluejay}}'
+    theia: 'https://assets{{dns.pompeia}}'
   reporter:
     default: 'grafana'
-    grafana: 'https://reporter{{dns.bluejay}}'
+    grafana: 'https://reporter{{dns.pompeia}}'
   registry:
     default: 'standard'
-    standard: 'https://registry{{dns.bluejay}}'
+    standard: 'https://registry{{dns.pompeia}}'
 #  collector:
 #    default: 'events'
-#    events: 'https://collector-events{{dns.bluejay}}'
+#    events: 'https://collector-events{{dns.pompeia}}'
   dashboard:
     default: 'grafana'
-    grafana: 'https://dashboard{{dns.bluejay}}'
+    grafana: 'https://dashboard{{dns.pompeia}}'
   scopes:
-    default: 'bluejay'
-    bluejay: 'https://scopes{{dns.bluejay}}'
+    default: 'pompeia'
+    pompeia: 'https://scopes{{dns.pompeia}}'
   director:
     default: 'standard'
-    standard: 'https://director{{dns.bluejay}}' 
+    standard: 'https://director{{dns.pompeia}}' 
 dns:
-  default: 'bluejay'
-  bluejay: '$_[SERVICES_PREFIX]$_[DNS_SUFFIX]'
+  default: 'pompeia'
+  pompeia: '$_[SERVICES_PREFIX]$_[DNS_SUFFIX]'
